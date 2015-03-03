@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
   <link rel="stylesheet" href="styles/styles.css"/>
 </head>
-<body ng-app="angularFromScratch" ng-controller="Principal as principal">
+<body ng-app="angularFromScratch" ng-controller="PrincipalCtrl as principal">
   <div class="container">
     <div class="row">
       <div class="col-xs-12">
@@ -16,7 +16,31 @@
       </div>
     </div>
     <div class="row">
-
+      <div ng-controller="ContactosCtrl as contactos" class="container contactos-container">
+        <div class="row">
+          <div class="col-xs-12">
+            <h2>Lista Contactos</h2>
+          </div>
+        </div>
+        <table class="table table-hover table-striped table-clickable">
+          <thead>
+            <tr class="row">
+              <th class="col-xs-3">Icono</th>
+              <th class="col-xs-3">Nombre</th>
+              <th class="col-xs-3">Apellido</th>
+              <th class="col-xs-3">Contacto</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="contacto in contactos.contactosArray" class="row">
+              <td class="col-xs-3" ng-bind-html="contacto.thumb"></td>
+              <td class="col-xs-3">{{contacto.nombre}}</td>
+              <td class="col-xs-3">{{contacto.apellido}}</td>
+              <td class="col-xs-3">{{contacto.contacto}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
     <div class="row">
 
@@ -24,6 +48,7 @@
   </div>
   <script src="bower_components/fastclick/lib/fastclick.js"></script>
   <script src="bower_components/angular/angular.min.js"></script>
+  <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
   <script src="scripts/app.js"></script>
 </body>
 </html>
