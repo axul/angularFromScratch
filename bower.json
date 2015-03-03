@@ -1,0 +1,22 @@
+{
+  "name": "angularfromstrach",
+  "version": "0.0.1",
+  "dependencies": {
+    "respond": "~1.4.2",
+    "es5-shim": "~4.0.5",
+    "json3": "~3.3",
+    "jquery": "~1.11.0",
+    "bootstrap": "3.3.2",
+    "angular": "~1.2",
+    "angular-resource": "~1.2",
+    "angular-sanitize": "~1.2",
+    "angular-route": "~1.2",
+    "angular-touch": "~1.2",
+    "angular-animate": "~1.2",
+    "angular-carousel": "0.2.2",
+    "angular-i18n": "1.2.23",
+    "fastclick": "1.0.3"
+    },
+    "devDependencies": {
+    }
+  }
