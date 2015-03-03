@@ -10,3 +10,10 @@ body{
 .table.table-clickable tr{
 	cursor: pointer;
 }
+.perfil-thumb{
+	height: 100px;
+	width: 100px;
+}
+.perfil-thumb span{
+	font-size: 90px;
+}
