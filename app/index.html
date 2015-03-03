@@ -22,6 +22,11 @@
             <h2>Lista Contactos</h2>
           </div>
         </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <input type="text" ng-model="busqueda" class="form-control" placeholder="Filtrar resultados">
+          </div>
+        </div>
         <table class="table table-hover table-striped table-clickable">
           <thead>
             <tr class="row">
@@ -32,11 +37,11 @@
             </tr>
           </thead>
           <tbody>
-            <tr ng-repeat="contacto in contactos.contactosArray" class="row">
+            <tr ng-repeat="contacto in contactos.contactosArray | filter:busqueda" class="row">
               <td class="col-xs-3" ng-bind-html="contacto.thumb"></td>
               <td class="col-xs-3">{{contacto.nombre}}</td>
               <td class="col-xs-3">{{contacto.apellido}}</td>
-              <td class="col-xs-3">{{contacto.contacto}}</td>
+              <td class="col-xs-3"><a target="_blank" ng-href="https://twitter.com/{{contacto.contacto}}">{{contacto.contacto}}</a></td>
             </tr>
           </tbody>
         </table>
