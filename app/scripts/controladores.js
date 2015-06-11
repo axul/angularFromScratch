@@ -1,11 +1,11 @@
 'use strict';
 angular.module('app.controladores', [])
 .controller('PrincipalCtrl',['$scope',function($scope){
-	this.tituloApp = 'Hola AngularJS';
+	
 }])
-.controller('ContactosCtrl',['$scope',function($scope){
+.controller('ContactosCtrl',['$scope','$rootScope',function($scope,$rootScope){
 	this.perfilActivo = -1;
-
+	$rootScope.globales.seccionActual = 'Contactos';
 	this.contactosArray = [
 		{nombre: 'Axel', apellido: 'Salmeron', contacto: '@axulsr',
 		icon: '<span class="glyphicon glyphicon-user"></span>',
@@ -41,6 +41,9 @@ angular.module('app.controladores', [])
 		return (this.perfilActivo==-1) ?  false : true;
 	};
 }])
-.controller('PerfilCtrl',['$scope',function($scope){
+.controller('PerfilCtrl',['$scope','$rootScope',function($scope,$rootScope){
 	this.perfil = '';
+}])
+.controller('AcercaDeCtrl',['$scope','$rootScope',function($scope,$rootScope){
+	$rootScope.globales.seccionActual = 'Acerca de';
 }]);

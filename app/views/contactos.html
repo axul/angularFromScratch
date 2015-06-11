@@ -1,0 +1,37 @@
+<div class="row" ng-show="!contactos.isPerfilActivo()">
+  <div class="col-xs-12">
+    <input type="text" ng-model="busqueda" class="form-control" placeholder="Filtrar resultados" ng-change="contactos.mostrarPerfil(-1)">
+  </div>
+</div>
+<table class="table table-hover table-striped table-clickable" ng-show="!contactos.isPerfilActivo(-1)">
+  <thead>
+    <tr class="row">
+      <th class="col-xs-3">Icono</th>
+      <th class="col-xs-3">Nombre</th>
+      <th class="col-xs-3">Apellido</th>
+      <th class="col-xs-3">Contacto</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="contacto in contactos.contactosArray | filter:busqueda" class="row" ng-click="contactos.mostrarPerfil($index)">
+      <td class="col-xs-3" ng-bind-html="contacto.icon"></td>
+      <td class="col-xs-3">{{contacto.nombre}}</td>
+      <td class="col-xs-3">{{contacto.apellido}}</td>
+      <td class="col-xs-3"><a target="_blank" ng-href="https://twitter.com/{{contacto.contacto}}">{{contacto.contacto}}</a></td>
+    </tr>
+  </tbody>
+</table>
+<div class="container" ng-controller="PerfilCtrl as perfil" ng-show="contactos.isPerfilActivo()">
+  <div class="row">
+    <div class="col-xs-8">
+      <h3>Perfil de {{contactos.contactosArray[contactos.perfilActivo].nombre}}</h3>
+      <span class="img-thumbnail perfil-thumb text-center" ng-bind-html="contactos.contactosArray[contactos.perfilActivo].icon"></span>
+    </div>
+    <div class="col-xs-4 text-right">
+      <h3 ng-click="contactos.mostrarPerfil(-1)" class="btn btn-default">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+        <span>volver</span>
+      </h3>
+    </div>
+  </div>
+</div>
