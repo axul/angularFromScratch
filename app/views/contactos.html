@@ -13,7 +13,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr ng-repeat="contacto in contactos.contactosArray | filter:busqueda" class="row" ng-click="contactos.mostrarPerfil($index)">
+    <tr ng-repeat="contacto in contactosArray | filter:busqueda" class="row" ng-click="contactos.mostrarPerfil($index)">
       <td class="col-xs-3" ng-bind-html="contacto.icon"></td>
       <td class="col-xs-3">{{contacto.nombre}}</td>
       <td class="col-xs-3">{{contacto.apellido}}</td>
@@ -25,7 +25,7 @@
   <div class="row">
     <div class="col-xs-8">
       <h3>Perfil de {{contactos.contactosArray[contactos.perfilActivo].nombre}}</h3>
-      <span class="img-thumbnail perfil-thumb text-center" ng-bind-html="contactos.contactosArray[contactos.perfilActivo].icon"></span>
+      <span class="img-thumbnail perfil-thumb text-center" ng-bind-html="contactosArray[contactos.perfilActivo].icon"></span>
     </div>
     <div class="col-xs-4 text-right">
       <h3 ng-click="contactos.mostrarPerfil(-1)" class="btn btn-default">

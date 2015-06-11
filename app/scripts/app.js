@@ -2,6 +2,7 @@
 var app = angular.module('angularFromScratch', [
 	'ngRoute',
 	'ngSanitize',
+	'ngResource',
 	'app.controladores'
 ])
 .config(['$routeProvider', function($routeProvider) {
