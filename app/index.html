@@ -22,12 +22,12 @@
             <h2>Lista Contactos</h2>
           </div>
         </div>
-        <div class="row">
+        <div class="row" ng-show="!contactos.isPerfilActivo()">
           <div class="col-xs-12">
             <input type="text" ng-model="busqueda" class="form-control" placeholder="Filtrar resultados" ng-change="contactos.mostrarPerfil(-1)">
           </div>
         </div>
-        <table class="table table-hover table-striped table-clickable">
+        <table class="table table-hover table-striped table-clickable" ng-show="!contactos.isPerfilActivo(-1)">
           <thead>
             <tr class="row">
               <th class="col-xs-3">Icono</th>
@@ -69,5 +69,6 @@
   <script src="bower_components/angular/angular.min.js"></script>
   <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
   <script src="scripts/app.js"></script>
+  <script src="scripts/controladores.js"></script>
 </body>
 </html>
